@@ -24,7 +24,7 @@ def get_last_frame(video_path, image_path):
     last_frame_image.save(image_path)
     return image_path
 
-def main(prompt, opt='txt2vid', n_steps=40, num_iterations=3, video_path=None, cache_dir=None):
+def main(prompt, opt='txt2vid', n_steps=40, num_iterations=3, video_path=None, cache_dir='./huggingface_models/'):
     # model load
     base_pipe = DiffusionPipeline.from_pretrained(
         "stabilityai/stable-diffusion-xl-base-1.0",
