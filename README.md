@@ -13,3 +13,5 @@ num_iterations: the length of the generated video is 5*num_iterations.
 video_path: the path of the video for video extension or video editing.
 cache_dir: save the pre-trained model.
 ```
+
+You can control the length of each generated video by modifying the `fps` of line 81. The total length of the generated video is `25*num_iterations/fps`
