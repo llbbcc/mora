@@ -8,7 +8,7 @@ from diffusers.utils import export_to_video
 from diffusers import StableVideoDiffusionPipeline, DiffusionPipeline, StableDiffusionInstructPix2PixPipeline, EulerAncestralDiscreteScheduler
 
 def prompt_enhance(prompt):
-    openai.api_key = "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" 
+    openai.api_key = YOUR_OPENAI_KEY 
     content = "Simply expand the following passage to make it fuller and more detailed. Return only to the expanded version." + prompt
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -24,7 +24,7 @@ def get_last_frame(video_path, image_path):
     last_frame_image.save(image_path)
     return image_path
 
-def main(prompt, opt='txt2vid', n_steps=40, num_iterations=3, video_path=None, cache_dir='/data/disk1/jupyter/watermark/huggingface/'):
+def main(prompt, opt='txt2vid', n_steps=40, num_iterations=3, video_path=None, cache_dir=None):
     # model load
     base_pipe = DiffusionPipeline.from_pretrained(
         "stabilityai/stable-diffusion-xl-base-1.0",
